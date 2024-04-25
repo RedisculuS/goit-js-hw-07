@@ -28,8 +28,7 @@ const images = [
 ];
 
 const imagesList = document.querySelector("ul.gallery");
-// const imagesItem = document.createElement("li");
-// console.log(imagesList);
+const arrayImg = [];
 
 const imagesListItems = images.forEach((img) => {
   const imagesItem = document.createElement("li");
@@ -37,8 +36,11 @@ const imagesListItems = images.forEach((img) => {
     "afterbegin",
     `<img alt = ${img.alt} src = ${img.url} width = 360 height = 100%></img>`
   );
-  imagesList.append(imagesItem);
+  arrayImg.push(imagesItem);
 });
+console.log(arrayImg);
+
+imagesList.append(...arrayImg);
 
 imagesList.style.listStyleType = "none";
 imagesList.style.display = "flex";

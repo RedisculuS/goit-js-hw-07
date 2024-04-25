@@ -10,6 +10,7 @@ const controlsDiv = document.querySelector("#controls");
 const createBtn = controlsDiv.querySelector("[data-create]");
 const destroyBtn = controlsDiv.querySelector("[data-destroy]");
 const boxesDiv = document.querySelector("#boxes");
+const fragment = document.createDocumentFragment();
 
 createBtn.addEventListener("click", () => {
   const amountInput = controlsDiv.querySelector("input");
@@ -31,8 +32,10 @@ function createBoxes(amount) {
     box.style.width = `${30 + i * 10}px`;
     box.style.height = `${30 + i * 10}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesDiv.appendChild(box);
+    boxesDiv.innerHTML = "";
+    fragment.appendChild(box);
   }
+  boxesDiv.append(fragment);
 }
 
 function destroyBoxes() {

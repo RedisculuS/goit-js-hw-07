@@ -16,7 +16,8 @@ function handleSubmit(event) {
     alert("All form fields must be filled in");
     return;
   } else {
-    inputDataObj[loginEmail] = password;
+    inputDataObj["email"] = loginEmail;
+    inputDataObj["password"] = password;
     console.log(inputDataObj);
   }
 
